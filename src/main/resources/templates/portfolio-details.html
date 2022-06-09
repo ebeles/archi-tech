@@ -1,0 +1,40 @@
+<div xmlns:th="http://www.thymeleaf.org">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">WEB PROGRAMMING SHOP</h1>
+      <h3 class="jumbotron-heading">All products</h3>
+    </div>
+  </section>
+
+  <div class="container mb-4">
+    <div class="row">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th scope="col">Project name</th>
+              <th scope="col">Location</th>
+              <th scope="col">Description</th>
+              <th scope="col">Category</th>
+              <th scope="col">Client</th>
+              <th scope="col">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="project : ${projects}" class="project">
+              <td th:text="${project.name}"></td>
+              <td th:text="${project.location}"></td>
+              <td th:text="${project.description}"></td>
+              <td th:text="${project.getCategory() != null}
+                            ? ${project.getCategory().getName()} : 'No Category'"></td>
+              <td th:text="${project.getClient() != null}
+                            ? ${project.getClient().getName()} : 'No Client'"></td>
+              <td th:text="${project.getStatus() != null}
+                            ? ${project.getStatus().getType()} : 'No Client'"></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
