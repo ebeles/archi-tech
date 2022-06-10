@@ -1,8 +1,6 @@
 package com.example.javaweb.services;
 
 import com.example.javaweb.models.Object;
-import com.example.javaweb.models.Status;
-import com.example.javaweb.repositories.CategoryRepository;
 import com.example.javaweb.repositories.ObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +11,6 @@ import java.io.IOException;
 import java.util.Base64;
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ObjectService {

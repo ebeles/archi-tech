@@ -3,9 +3,6 @@ package com.example.javaweb.services;
 
 import com.example.javaweb.models.Material;
 import com.example.javaweb.repositories.MaterialRepository;
-import org.apache.velocity.exception.ResourceNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,8 +10,11 @@ import java.util.List;
 @Service
 public class MaterialService {
 
-    @Autowired
-    private MaterialRepository materialRepository;
+    private final MaterialRepository materialRepository;
+
+    public MaterialService(MaterialRepository materialRepository) {
+        this.materialRepository = materialRepository;
+    }
 
 
     public List<Material> findAll(){
@@ -29,9 +29,9 @@ public class MaterialService {
         materialRepository.save(material);
     }
 
-    public Material findById(Integer id) {
-        return materialRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Material not found"));
+    public Material getMaterialById(Integer id) {
+        return materialRepository.findById(id).get();
+
     }
 
 

@@ -32,6 +32,13 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
 
   <!--  <link rel="stylesheet" href="${pageContext.request.contextPath}../static/assets/css/bootstrap.min.css">-->
   <!--  <link type="text/css" href="assets/css/bootstrap-grid.css" rel="stylesheet" >-->
@@ -125,12 +132,15 @@
                 <h4 th:text="${project.name}"></h4>
                 <div class="portfolio-links">
                   <a th:src="*{'data:image/jpeg;base64,'+{project.image}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="/portfolio-details">Details</a>
+                  <a href="/portfolio-details" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i>Details</a>
+
                 </div>
               </div>
             </div>
           </div>
             </div>
+      </div>
+    </div>
 
   </section><!-- End Portfolio Section -->
 

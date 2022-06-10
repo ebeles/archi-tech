@@ -16,7 +16,6 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class Material {
 
-    @NotNull
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;

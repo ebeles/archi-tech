@@ -1,9 +1,5 @@
 package com.example.javaweb.controllers;
 
-import com.example.javaweb.models.Category;
-import com.example.javaweb.models.Client;
-import com.example.javaweb.models.Object;
-import com.example.javaweb.models.Status;
 import com.example.javaweb.services.CategoryService;
 import com.example.javaweb.services.ClientService;
 import com.example.javaweb.services.ObjectService;
@@ -16,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
-import java.util.List;
 
 @Controller
 public class ObjectController {
@@ -72,7 +67,7 @@ public class ObjectController {
         model.addAttribute("clients", clientService.findAll());
         model.addAttribute("statuses", statusService.findAll());
         model.addAttribute("projects", objectService.getObjectsByStatusId(id));
-        return "portfolio";
+        return "allProjects";
     }
 
 
